@@ -1,4 +1,6 @@
 import HeroImg from "@/assets/images/hero.jpg";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function About() {
   return (
@@ -6,7 +8,7 @@ export default function About() {
       <section id="about" className="py-16 md:py-32 text-white bg-[#04081A]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
-            Developer, Creator, Innovator, Smarter
+            Engineer, Researcher, Competitor, Contributor
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
@@ -28,26 +30,25 @@ export default function About() {
               {/* Intro paragraph */}
               <p className="text-gray-300">
                 Hello! I’m <span className="font-semibold text-white">Khushi</span>, 
-                a passionate AI & ML Engineer currently in my final year of 
-                B.Tech (CSE – AI & ML) from India. I’ve mentored peers, led 
-                workshops, and worked on projects that merge technology with 
-                real-world impact. With a deep interest in applied intelligence 
-                and innovation, I’m building solutions that make AI more 
-                accessible and meaningful.
+                a Junior AIML Engineer at Radius Synergies International and a 
+                2026 B.Tech graduate of KIET Group of Institutions. My work today 
+                is speech and LLM systems: benchmarking streaming TTS models, 
+                and building multi-agent chatbots that turn plain language into 
+                structured queries. Outside work I compete on Kaggle as a 
+                Kaggle Expert and contribute to open-source Python libraries 
+                such as matchms and MLflow.
               </p>
 
               {/* Highlighted block */}
               <div className="pt-6">
                 <blockquote className="border-l-4 border-gray-300 pl-4">
                   <p className="text-white">
-                    I’m an AI & ML Engineer driven by curiosity and innovation in 
-                    intelligent systems. Over the years, I’ve built impactful 
-                    projects in Machine Learning, Deep Learning, NLP, and Computer 
-                    Vision — from patented solutions like Early Forest Fire 
-                    Prediction and Signify (Sign Language to Text/Speech) to 
-                    advanced research in Malware Classification using CNNs. 
-                    My goal is to develop AI solutions that empower accessibility, 
-                    sustainability, and real-world decision-making.
+                    I got here through four internships, a string of hackathons 
+                    including the Smart India Hackathon 2024 finals, two patent 
+                    filings (Signify and Early Forest Fire Prediction) and 
+                    research on malware classification with CNNs that reached 
+                    99.45% on Malimg. I like problems where a model has to 
+                    work for real people, in real time.
                   </p>
 
                   <div className="mt-6 space-y-1">
@@ -55,11 +56,19 @@ export default function About() {
                       Khushi 
                     </cite>
                     <span className="text-gray-400 text-sm">
-                      AI & ML Engineer
+                      Junior AIML Engineer
                     </span>
                   </div>
                 </blockquote>
               </div>
+
+              <Link
+                to="/journey"
+                className="inline-flex items-center gap-2 pt-4 font-medium text-teal-300 hover:underline"
+              >
+                Read my full journey, 2022 to today
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>

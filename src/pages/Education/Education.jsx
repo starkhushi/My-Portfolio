@@ -5,13 +5,13 @@ import { Calendar } from "lucide-react";
 
 const achievements = [
   {
-    title: "Patent Holder – ISL Bidirectional Translation System",
+    title: "Patent Filed – Signify: ISL Bidirectional Translation System",
     image: "/achievements/patent.jpg",  // ✅ put patent image here
     issuer: "Indian Patent Office",
     date: "Dec 2024",
   },
   {
-    title: "Patent Holder – Early Forest Fire Detection System",
+    title: "Patent Filed – Early Forest Fire Prediction System",
     image: "/achievements/patent2.jpg",  // ✅ same or separate image
     issuer: "Indian Patent Office",
     date: "Dec 2024",
@@ -23,7 +23,7 @@ const achievements = [
     date: "Sep 2025",
   },
   {
-    title: "Smart India Hackathon Finalist 2024",
+    title: "Top 5 Finalist – Smart India Hackathon 2024",
     image: "/achievements/sih_new.jpg",
     issuer: "Government of India",
     date: "Nov 2024",
@@ -47,7 +47,7 @@ const achievements = [
     date: "Apr 2024",
   },
   {
-    title: "Quiz Winner-MLSA",
+    title: "Quiz Winner – MLSA",
     image: "/achievements/quiz.jpg",
     issuer: "MLSA MIET",
     date: "Apr 2024",

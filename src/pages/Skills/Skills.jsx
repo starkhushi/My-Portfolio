@@ -77,7 +77,9 @@ const SkillsSection = () => {
         { name: "Tensorflow", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#FBBF24]" /> },
         { name: "PyTorch", icon: <MdAnimation className="w-4 h-4 text-[#FF4081]" /> },
         { name: "Scikit-learn", icon: <BsFileEarmarkCode className="w-4 h-4 text-white" /> },
+        { name: "Keras", icon: <BsGrid1X2 className="w-4 h-4 text-[#F87171]" /> },
         { name: "LangChain", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
+        { name: "LangGraph", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#34D399]" /> },
       ],
     },
     {
@@ -94,13 +96,16 @@ const SkillsSection = () => {
     },
     {
       icon: Layers,
-      title: "Natural Language Processing",
+      title: "NLP, LLMs & Speech",
       color: "text-purple-400",
       skills: [
         { name: "Transformers", icon: <Layout className="w-4 h-4 text-[#38B2AC]" /> },
         { name: "Sentiment Analysis", icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" /> },
         { name: "NLP Pipelines", icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" /> },
-        { name: "LLMs (GPT/Gemini)", icon: <BsFileEarmarkCode className="w-4 h-4 text-white" /> },
+        { name: "LLMs (Gemma / Gemini / GPT)", icon: <BsFileEarmarkCode className="w-4 h-4 text-white" /> },
+        { name: "Multi-Agent Systems", icon: <Layout className="w-4 h-4 text-[#A78BFA]" /> },
+        { name: "Text-to-Speech", icon: <MdAnimation className="w-4 h-4 text-[#34D399]" /> },
+        { name: "Whisper ASR", icon: <BsGrid1X2 className="w-4 h-4 text-[#60A5FA]" /> },
       ],
     },
     {
@@ -112,6 +117,9 @@ const SkillsSection = () => {
         { name: "Numpy", icon: <SiVercel className="w-4 h-4 text-white" /> },
         { name: "EDA and Visualization", icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" /> },
         { name: "Power BI", icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
+        { name: "Tableau", icon: <BsGrid1X2 className="w-4 h-4 text-[#60A5FA]" /> },
+        { name: "Google Analytics", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F59E0B]" /> },
+        { name: "Kaggle Competitions", icon: <MdAnimation className="w-4 h-4 text-[#20BEFF]" /> },
       ],
     },
     {
@@ -119,6 +127,8 @@ const SkillsSection = () => {
       title: "Databases & Backend",
       color: "text-orange-400",
       skills: [
+        { name: "Flask", icon: <BsFileEarmarkCode className="w-4 h-4 text-white" /> },
+        { name: "MongoDB", icon: <SiFirebase className="w-4 h-4 text-[#4DB33D]" /> },
         { name: "MySQL", icon: <SiFirebase className="w-4 h-4 text-[#8E44AD]" /> },
         { name: "PostgreSQL", icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" /> },
         { name: "SQLite", icon: <FaNodeJs className="w-4 h-4 text-[#68A063]" /> },
@@ -160,7 +170,7 @@ const SkillsSection = () => {
           ))}
         </div>
       </section>
-      <style jsx>{`
+      <style>{`
         @keyframes shimmer {
           0% {
             transform: translateX(-100%);

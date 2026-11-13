@@ -6,6 +6,21 @@ import Meteors from "@/components/ui/meteors";
 import PortfolioPage from "@/pages/About/About";
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
+import { Link } from "react-router-dom";
+import { ArrowRight, ChevronDown, Download, Rocket } from "lucide-react";
+import { FaGithub, FaKaggle, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
+const socials = [
+  { href: "https://github.com/starkhushi", label: "GitHub", icon: FaGithub },
+  {
+    href: "https://www.linkedin.com/in/khushi-47507a250/",
+    label: "LinkedIn",
+    icon: FaLinkedin,
+  },
+  { href: "https://www.kaggle.com/starkhushi", label: "Kaggle", icon: FaKaggle },
+  { href: "mailto:khushi886987@gmail.com", label: "Email", icon: MdEmail },
+];
 
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
@@ -42,41 +57,43 @@ const GridBackground = () => {
 
 export default function Hero() {
   const words = [
-    "AI & ML Engineer | Deep Learning & Computer Vision",
-    "Researcher in NLP, Generative AI, and Multi-Agent Systems",
-    "Creator of 'Signify' – Sign Language to Text/Speech (Patent)",
-    "Built Real-Time Computer Vision Systems using YOLO & OpenCV",
-    "Driven by Curiosity, Innovation, and Impactful AI Solutions",
+    "Junior AIML Engineer at Radius Synergies",
+    "Speech AI: streaming TTS, VAD and ASR",
+    "Multi-agent LLM systems with LangGraph and Gemma",
+    "Kaggle Expert and open-source contributor",
+    "2 patents filed: Signify and Early Forest Fire Prediction",
   ];
 
 
   const [code] = useState(`
 const profile = {
   name: 'Khushi',
-  title: 'AI & ML Engineer | Deep Learning | Computer Vision | NLP',
+  title: 'Junior AIML Engineer | Speech AI | LLMs | Computer Vision',
+  currently: 'Radius Synergies International Pvt. Ltd. (Nov 2025 – Present)',
   skills: [
-    'Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'Keras',
-    'LangChain', 'LLMs', 'Data Science', 'Machine Learning',
-    'Deep Learning', 'NLP', 'Computer Vision', 
-    'Power BI', 'SQL', 'Streamlit'
+    'Python', 'PyTorch', 'TensorFlow', 'Keras', 'OpenCV',
+    'LLMs', 'LangChain', 'LangGraph', 'NLP', 'Text-to-Speech',
+    'Flask', 'MongoDB', 'PostgreSQL', 'MySQL',
+    'Power BI', 'Tableau', 'EDA'
   ],
-  education: 'B.Tech in Computer Science (AI & ML Specialization), KIET Group of Institutions (2022–2026)',
+  education: 'B.Tech, KIET Group of Institutions (2022–2026), GPA 8.2/10',
   experience: [
-    'AIML Intern, soFueled – Built real-time computer vision system using YOLOv8 & OpenCV for granular object analysis.',
-    'AIML Intern, Epsilon Creative Agency – Created real-time image-to-avatar pipeline using Stable Diffusion & Deep Learning.',
-    'AIML Intern, Zipbolt Innovation Labs – Detected EV sensor anomalies using RPCA & Isolation Forest, integrated Power BI dashboards.'
+    'Junior AIML Engineer, Radius Synergies – streaming TTS benchmarks, multi-agent Tally chatbot on Gemma-4-31B, transformer health models.',
+    'AI Trainee, DheeYantra – Text-to-Speech module for a multilingual chatbot.',
+    'AIML Intern, soFueled – real-time computer vision with YOLOv8 & OpenCV.',
+    'AIML Intern, Epsilon Creative Agency and Zipbolt Innovation Labs.'
   ],
   projects: [
-    'Signify – Indian Sign Language to Text/Speech (Patent)',
-    'Early Forest Fire Prediction (Patent)',
-    'Tabular Question Answering using LLMs (TAPAS & Gemini)',
-    'Intelligent Multi-Agent Medical Appointment Scheduler'
+    'Malware Classification – 99.45% on Malimg, 98.72% on Malevis',
+    'Intelligent Multi-Agent Medical Appointment Scheduler',
+    'Signify – Indian Sign Language to Text/Speech (patent filed)',
+    'Early Forest Fire Prediction (patent filed)'
   ],
   achievements: [
     'Top 5 Finalist – Smart India Hackathon 2024',
-    'Winner – IdeaSurge 2024 (Sharda University)',
-    'Runner-up – InnoTech 2024 (KIET)',
-    'Mentored 20+ students as Machine Learning Mentor at School of AI, ML & DS'
+    'Kaggle Expert',
+    'Merged pull requests in matchms and MLflow',
+    'AWS Academy Graduate – Generative AI Foundations'
   ],
   hardWorker: true,
   quickLearner: true,
@@ -221,7 +238,7 @@ const profile = {
 
               {/* Role badge */}
               <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
-                <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
+                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 animate-bounce shrink-0" />
                 <span>
                   <FlipWords
                     className={"text-lg sm:text-xl text-blue-400 font-medium"}
@@ -233,54 +250,76 @@ const profile = {
               {/* Description */}
               <div className="relative mb-8 sm:mb-12 max-w-xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  💻 AI Innovator | Turning models into impact – vision, speech & insight 🔍 | Forever curious, always creating ⚡
+                  I build speech and LLM systems that have to work in real
+                  time: streaming TTS, multi-agent chatbots and computer
+                  vision. Kaggle Expert, open-source contributor, always
+                  curious.
 
                 </p>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s">
-                {/* View Projects Button */}
-                <a
-                  href="https://www.linkedin.com/in/khushi-47507a250/"
+                {/* Journey Button */}
+                <Link
+                  to="/journey"
                   className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>Learn More</span>
-                      <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
+                      <span>My Journey</span>
+                      <ArrowRight className="w-4 h-4 transform transition-all duration-300 group-hover:translate-x-1" />
                     </span>
                   </span>
-                </a>
+                </Link>
 
                 {/* Contact Button */}
                 <a
-                  href="https://drive.google.com/file/d/1oWZEb8LqE2jdbBYZIHNfqhKPdw0da4n5/view?usp=sharing"
+                  href="/Khushi_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
                     <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
                       <span>Get Resume</span>
-                      <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
+                      <Download className="w-4 h-4" />
                     </span>
                   </span>
                 </a>
               </div>
 
+              {/* Social links */}
+              <div className="mt-8 flex items-center gap-3">
+                {socials.map(({ href, label, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    title={label}
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-700/60 bg-gray-800/50 text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/60 hover:text-white"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
+
               {/* Floating badges */}
-              <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
+              <div className="hidden lg:block absolute left-[17rem] -top-2 animate-float-slow">
                 <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-wand-magic-sparkles"></i>&nbsp;&nbsp;Gamer
+                  Kaggle Expert
                 </div>
               </div>
               <div className="hidden lg:block absolute right-10 top-20 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-code"></i>&nbsp;&nbsp;Clean Code
+                  Speech AI
                 </div>
               </div>
               <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
-                  <i className="fas fa-lightbulb"></i>&nbsp;&nbsp;Innovation
+                  Open Source
                 </div>
               </div>
             </div>
@@ -294,7 +333,6 @@ const profile = {
                     <div className="window-dot bg-yellow-500"></div>
                     <div className="window-dot bg-green-500"></div>
                     <span className="ml-2 text-sm text-gray-400 flex items-center gap-2">
-                      <i className="fas fa-code"></i>
                      profile.js
                     </span>
                   </div>
@@ -310,10 +348,9 @@ const profile = {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
           <span className="text-gray-400 text-sm flex items-center gap-2">
-            <i className="fas fa-mouse text-blue-400"></i>
             About me
           </span>
-          <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
+          <ChevronDown className="w-5 h-5 text-blue-400" />
         </div>
         <PortfolioPage />
       </main>

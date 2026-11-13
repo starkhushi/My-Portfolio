@@ -22,7 +22,7 @@ const ExperienceCard = ({
         <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
           {title}
         </h3>
-        <div className="flex justify-between items-center text-gray-300">
+        <div className="flex flex-wrap justify-between items-center gap-2 text-gray-300">
           <span className="font-semibold text-blue-400">{company}</span>
           <span className="text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full">
             {period}
@@ -48,12 +48,20 @@ const ExperienceCard = ({
 const ExperienceSection = () => {
   const experiences = [
     {
+      icon: Cpu,
+      title: "Junior AIML Engineer",
+      company: "Radius Synergies International Pvt. Ltd.",
+      period: "Nov 2025 – Present",
+      description:
+        "Benchmarked streaming TTS models (Qwen3-TTS, Higgs TTS, YourVoic, ElevenLabs) on latency, accuracy and emotion control with a real-time VAD pipeline. Built an account-based Tally chatbot on Gemma-4-31B (8-bit) with a multi-agent setup that converts natural-language queries into Tally-compatible XML, backed by MongoDB. Applied statistical analysis and Logistic, Ridge and Lasso Regression to the Distribution Transformer Health Tracking (DTHT) project.",
+    },
+    {
       icon: Code2,
       title: "AI Trainee",
-      company: "Dheyantra Pvt. Ltd.",
-      period: "Sept 2025 – Present",
+      company: "DheeYantra",
+      period: "Sep 2025 – Dec 2025",
       description:
-        "Working on production-grade AI systems involving NLP, computer vision, and multimodal pipelines. Contributing to data engineering, model training, and enterprise AI automations while supporting scalable system design.",
+        "Worked on the Text-to-Speech module of an intelligent multilingual chatbot to deliver natural, humanlike voice interactions. Integrated speech synthesis with conversational AI workflows and explored fine-tuning and optimization of TTS models for scalability and low-latency responses.",
     },
     {
       icon: Cpu,
@@ -61,7 +69,7 @@ const ExperienceSection = () => {
       company: "soFueled",
       period: "Jul 2025 – Aug 2025",
       description:
-        "Architected a real-time computer vision system for automated granular object analysis using YOLOv8 and OpenCV. Developed a hybrid segmentation and counting pipeline using watershed and convexity defect analysis to resolve occlusion and improve counting accuracy.",
+        "Architected a real-time computer vision system for automated granular object analysis using YOLOv8 and OpenCV. Devised a hybrid segmentation and counting method using watershed output and convexity defect analysis to resolve dense occlusion and improve counting accuracy.",
     },
     {
       icon: Code2,

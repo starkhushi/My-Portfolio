@@ -24,7 +24,7 @@ Welcome to my **portfolio website**! This site showcases my skills, experience, 
 ## Live Preview
 
 Check out the live preview of the portfolio website here:  
-[**Live Demo**](https://codervai.vercel.app/)
+[**Live Demo**](https://khushi-39b5960.netlify.app/)
 ---
 ### 🎯 Project Structure
 ```bash
@@ -106,9 +106,10 @@ portfolio/
 The portfolio website consists of the following sections:
 
 - **Home**: Introduction and a brief overview.
+- **Journey**: A filterable timeline from 2022 to today: education, work, research, awards, Kaggle and open source.
 - **Skills**: A detailed list of my technical skills.
 - **Experience**: My professional journey and work experience.
-- **Education**: Academic background and certifications.
+- **Achievements**: Patents, hackathons and awards.
 - **Projects**: A showcase of the projects I've worked on.
 - **Contact**: Information on how to reach out to me.
 
@@ -119,7 +120,7 @@ The portfolio website consists of the following sections:
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **Icons:** React Icons
-- **Deployment:** Vercel
+- **Deployment:** Netlify
 
 ---
 
@@ -151,12 +152,12 @@ You will need to download **Git** and **Node** to run this project.
 2. After forking, open your terminal and run the following commands to clone the repo:
 
   ```bash
-  git clone https://github.com/seraprogrammer/portfolio.git
+  git clone https://github.com/starkhushi/My-Portfolio.git
   ```
 Navigate to the Project Directory 📂
 Once the repository is cloned, change your directory to the project folder:
 ```bash
-cd portfolio
+cd My-Portfolio
 ```
 
 Install Dependencies ⚙️
@@ -189,5 +190,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-<div align="center"> Made with ❤️ by Nazmul Hossain </div>
+<div align="center"> Built by Khushi, based on the portfolio template by Nazmul Hossain </div>
 

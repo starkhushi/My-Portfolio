@@ -110,7 +110,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-400">khushi886987@gmail.com</p>
+                    <a href="mailto:khushi886987@gmail.com" className="text-gray-400 hover:text-white">khushi886987@gmail.com</a>
                   </div>
                 </div>
 

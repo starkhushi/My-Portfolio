@@ -8,15 +8,13 @@ import {
   FaCode,
   FaEnvelope,
   FaBars,
+  FaRoute,
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const location = useLocation();
-  const [activeLink, setActiveLink] = useState(() => {
-    const path = location.pathname.substring(1) || "home";
-    return path;
-  });
+  const activeLink = location.pathname.substring(1) || "home";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -28,6 +26,7 @@ export default function Header() {
 
   const navLinks = [
     { id: "home", icon: FaHome, text: "Home", path: "/" },
+    { id: "journey", icon: FaRoute, text: "Journey", path: "/journey" },
     { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
     {
       id: "experience",
@@ -38,7 +37,7 @@ export default function Header() {
     {
       id: "education",
       icon: FaGraduationCap,
-      text: "Achievement",
+      text: "Achievements",
       path: "/education",
     },
     { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
@@ -52,10 +51,11 @@ export default function Header() {
           <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-4 md:px-6 py-2.5">
             {/* Mobile Menu Button */}
             <div className="flex justify-between items-center md:hidden px-2">
-              <Link to="/" className="text-white font-bold">Portfolio</Link>
+              <Link to="/" className="text-white font-bold">Khushi</Link>
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
+                aria-label="Toggle menu"
               >
                 <FaBars />
               </button>
@@ -68,10 +68,7 @@ export default function Header() {
                   <Link
                     key={id}
                     to={path}
-                    onClick={() => {
-                      setActiveLink(id);
-                      setIsMenuOpen(false);
-                    }}
+                    onClick={() => setIsMenuOpen(false)}
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-sm font-medium
                       transition-all duration-300 flex items-center gap-2
                       hover:bg-white/10 
@@ -87,7 +84,7 @@ export default function Header() {
                         activeLink === id ? "scale-110" : ""
                       }`}
                     />
-                    <span className="inline">{text}</span>
+                    <span className="inline md:hidden lg:inline">{text}</span>
                   </Link>
                 ))}
               </div>

@@ -127,9 +127,11 @@
 /* Enhanced Prism.js styling */
 pre[class*="language-"] {
   background: #091121 !important;
-  padding: 1.5rem !important;
+  padding: 1.25rem 1.5rem !important;
   margin: 0 !important;
-  font-size: 0.95rem !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+  overflow-x: auto;
 }
 
 .token.comment {

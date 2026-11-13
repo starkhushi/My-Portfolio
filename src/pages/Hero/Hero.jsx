@@ -65,119 +65,39 @@ export default function Hero() {
   ];
 
 
-  const [code] = useState(`
-const profile = {
+  const [code] = useState(`const profile = {
   name: 'Khushi',
-  title: 'Junior AIML Engineer | Speech AI | LLMs | Computer Vision',
-  currently: 'Radius Synergies International Pvt. Ltd. (Nov 2025 – Present)',
-  skills: [
-    'Python', 'PyTorch', 'TensorFlow', 'Keras', 'OpenCV',
-    'LLMs', 'LangChain', 'LangGraph', 'NLP', 'Text-to-Speech',
-    'Flask', 'MongoDB', 'PostgreSQL', 'MySQL',
-    'Power BI', 'Tableau', 'EDA'
+  role: 'Junior AIML Engineer',
+  company: 'Radius Synergies International',
+  focus: ['Speech AI', 'LLM agents', 'Computer Vision'],
+  stack: [
+    'Python', 'PyTorch', 'TensorFlow', 'OpenCV',
+    'LangChain', 'LangGraph', 'Flask', 'MongoDB'
   ],
-  education: 'B.Tech, KIET Group of Institutions (2022–2026), GPA 8.2/10',
-  experience: [
-    'Junior AIML Engineer, Radius Synergies – streaming TTS benchmarks, multi-agent Tally chatbot on Gemma-4-31B, transformer health models.',
-    'AI Trainee, DheeYantra – Text-to-Speech module for a multilingual chatbot.',
-    'AIML Intern, soFueled – real-time computer vision with YOLOv8 & OpenCV.',
-    'AIML Intern, Epsilon Creative Agency and Zipbolt Innovation Labs.'
-  ],
-  projects: [
-    'Malware Classification – 99.45% on Malimg, 98.72% on Malevis',
-    'Intelligent Multi-Agent Medical Appointment Scheduler',
-    'Signify – Indian Sign Language to Text/Speech (patent filed)',
-    'Early Forest Fire Prediction (patent filed)'
-  ],
-  achievements: [
-    'Top 5 Finalist – Smart India Hackathon 2024',
+  education: 'B.Tech, KIET (2022–2026)',
+  highlights: [
     'Kaggle Expert',
-    'Merged pull requests in matchms and MLflow',
-    'AWS Academy Graduate – Generative AI Foundations'
+    'Top 5 Finalist, Smart India Hackathon 2024',
+    '2 patents filed',
+    'Merged PRs in matchms and MLflow'
   ],
   hardWorker: true,
   quickLearner: true,
-  problemSolver: true,
-  yearsOfExperience: 2,
   hireable: function () {
-    return (
-      this.hardWorker &&
-      this.problemSolver &&
-      this.skills.length >= 5 &&
-      this.yearsOfExperience >= 2
-    );
+    return this.hardWorker && this.quickLearner;
   }
-};
-`);
+};`);
 
 
   useEffect(() => {
     Prism.highlightAll();
-
-    // Add CSS animation for grid and dots
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes gridPulse {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.3; }
-      }
-      
-      @keyframes dotPulse {
-        0%, 100% { opacity: 0.2; transform: scale(0.8); }
-        50% { opacity: 0.5; transform: scale(1.2); }
-      }
-      
-      /* Media query for 1366x768 resolution */
-      @media screen and (width: 1366px) and (height: 768px), 
-             screen and (width: 1367px) and (height: 768px),
-             screen and (width: 1368px) and (height: 769px) {
-        .hero {
-          padding-top: 12rem !important;
-        }
-        .hero .container {
-          padding-top: 10rem !important;
-          margin-top: 5rem !important;
-        }
-        .hero-section-padding {
-          padding-top: 12rem !important;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Apply extra padding for 1366x768 resolution
-    const checkResolution = () => {
-      const isTargetResolution =
-        window.innerWidth >= 1360 &&
-        window.innerWidth <= 1370 &&
-        window.innerHeight >= 760 &&
-        window.innerHeight <= 775;
-
-      if (isTargetResolution) {
-        document.documentElement.style.setProperty(
-          "--hero-padding-top",
-          "12rem"
-        );
-      } else {
-        document.documentElement.style.setProperty("--hero-padding-top", "0");
-      }
-    };
-
-    checkResolution();
-    window.addEventListener("resize", checkResolution);
-
-    return () => {
-      document.head.removeChild(style);
-      window.removeEventListener("resize", checkResolution);
-    };
   }, [code]);
 
   return (
     <>
       <main className="bg-[#020617] text-white min-h-screen">
         <section
-          className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
-          style={{ paddingTop: "var(--hero-padding-top, 0)" }}
+          className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 pt-24 pb-16 md:pt-28 lg:pb-20"
         >
           <div className="absolute inset-0"></div>
 
@@ -196,19 +116,10 @@ const profile = {
 
           {/* Main content container */}
           <div
-            className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28"
-            style={{
-              paddingTop:
-                window.innerWidth >= 1360 &&
-                window.innerWidth <= 1370 &&
-                window.innerHeight >= 760 &&
-                window.innerHeight <= 775
-                  ? "12rem"
-                  : "",
-            }}
+            className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 relative z-10"
           >
             {/* Left column - Text content */}
-            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative">
+            <div className="w-full lg:w-1/2 relative">
               {/* Decorative blurs */}
               <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
               <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
@@ -307,17 +218,17 @@ const profile = {
               </div>
 
               {/* Floating badges */}
-              <div className="hidden lg:block absolute left-[17rem] -top-2 animate-float-slow">
+              <div className="hidden xl:block absolute left-[17rem] -top-2 animate-float-slow">
                 <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
                   Kaggle Expert
                 </div>
               </div>
-              <div className="hidden lg:block absolute right-10 top-20 animate-float">
+              <div className="hidden xl:block absolute right-10 top-20 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
                   Speech AI
                 </div>
               </div>
-              <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
+              <div className="hidden xl:block absolute top-[10.5rem] right-24 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
                   Open Source
                 </div>
@@ -325,7 +236,7 @@ const profile = {
             </div>
 
             {/* Right column - Code window */}
-            <div className="w-full lg:w-1/2 animate__animated animate__fadeInDown animate__delay-0.1s">
+            <div className="w-full lg:w-[46%]">
               <div className="gradient-border">
                 <div className="code-window bg-[#091121]">
                   <div className="window-header">
@@ -343,15 +254,15 @@ const profile = {
               </div>
             </div>
           </div>
+        {/* Scroll indicator */}
+          <div className="hidden lg:flex absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce flex-col items-center gap-1">
+            <span className="text-gray-400 text-sm flex items-center gap-2">
+              About me
+            </span>
+            <ChevronDown className="w-5 h-5 text-blue-400" />
+          </div>
         </section>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-gray-400 text-sm flex items-center gap-2">
-            About me
-          </span>
-          <ChevronDown className="w-5 h-5 text-blue-400" />
-        </div>
         <PortfolioPage />
       </main>
     </>
